@@ -58,4 +58,12 @@ export class UserService {
         await this.userReponsitory.remove(user)
         return
     }
+    async findOne(email: string){
+        const user = await this.userReponsitory.findOne({
+            where: {
+                email: email
+            }
+        })
+        return user
+    } 
 }
